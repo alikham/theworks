@@ -38,7 +38,13 @@ if(isset($_POST)){
             }
             $price = $_POST['price'];
             $where .= ' rate <='.$price;
-    
+        }
+
+        if(isset($_POST['sort_by_price'])){
+            $where .= ' ORDER BY rate DESC';
+        }else{
+            $where .= ' ORDER BY rate ASC';
+
         }
     
         $sql = "SELECT * FROM items ".$where;

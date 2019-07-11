@@ -21,6 +21,8 @@
         <label for="unit_2">2<input type="radio" name="item_unit" value="2" id="unit_2"></label>
         
         <input type="range" id="price_range" name="price" min="0" max="30" > 
+        <label for="sort">Sort By Price/Rate<input type="checkbox" name="sort_by_price[]" value="sort" id="sort"></label>
+        
 </form>
 
  <table class="table table-bordered" id="entry-list">
