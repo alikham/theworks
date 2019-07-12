@@ -32,12 +32,13 @@ if(isset($_POST)){
     
         }
     
-        if(isset($_POST['price'])){
+        if(isset($_POST['min_price']) || isset($_POST['max_price'])){
             if(isset($_POST['item_unit']) || isset($_POST['item_name'])){
                 $where .= ' AND ';
             }
-            $price = $_POST['price'];
-            $where .= ' rate <='.$price;
+            $min_price = $_POST['min_price'];
+            $max_price = $_POST['max_price'];
+            $where .= ' rate <='.$max_price.' AND rate >='.$min_price;
         }
 
         if(isset($_POST['sort_by_price'])){
